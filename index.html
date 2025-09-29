@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zetus Research & Consulting</title>
+  <meta name="description" content="Zetus Research & Consulting — Research · Data · Strategy" />
+
+  <!-- Basic styling -->
+  <style>
+    :root{
+      --bg:#f7f8fb; --card:#ffffff; --muted:#6b7280; --accent:#4f46e5;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#111;}
+    header{background:linear-gradient(90deg,rgba(79,70,229,0.05),transparent);backdrop-filter: blur(2px);position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(0,0,0,0.04)}
+    .container{max-width:var(--maxw);margin:0 auto;padding:20px;}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav.desktop{display:flex;gap:10px;align-items:center}
+    a.navlink{padding:8px 12px;border-radius:8px;text-decoration:none;color:inherit;font-weight:600}
+    a.navlink:hover{background:rgba(0,0,0,0.04)}
+    /* mobile */
+    .mobile-toggle{display:none}
+    @media (max-width:880px){
+      nav.desktop{display:none}
+      .mobile-toggle{display:block}
+      .mobile-menu{display:none;padding:12px;background:var(--card);border-top:1px solid rgba(0,0,0,0.04)}
+      .mobile-menu.show{display:block}
+    }
+
+    main{padding:36px 0}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    @media (max-width:880px){ .hero{grid-template-columns:1fr} }
+
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+    .kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    @media (max-width:880px){ .services-grid{grid-template-columns:1fr} .kpi-grid{grid-template-columns:repeat(2,1fr)} }
+
+    h1{margin:0;font-size:28px}
+    h2{margin:0 0 10px 0;font-size:22px}
+    p.lead{color:var(--muted);margin-top:12px}
+
+    .clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    @media (max-width:880px){ .clients-grid{grid-template-columns:repeat(2,1fr)} }
+
+    .social-grid{display:flex;gap:10px;flex-wrap:wrap}
+
+    footer{border-top:1px solid rgba(0,0,0,0.04);margin-top:40px;padding:18px 0;color:var(--muted)}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;display:inline-block}
+    small{text-transform:none;color:var(--muted)}
+    .tenders-list{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+    .tender-item{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfbff);border:1px solid rgba(79,70,229,0.06)}
+    .muted{color:var(--muted)}
+    .chip{padding:6px 10px;border-radius:999px;background:rgba(79,70,229,0.09);color:var(--accent);font-weight:600}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="brand">
+        <div class="logo">ZR</div>
+        <div>
+          <div style="font-weight:700">Zetus Research & Consulting</div>
+          <div style="font-size:12px;color:var(--muted)">Research · Data · Strategy</div>
+        </div>
+      </div>
+
+      <nav class="desktop" aria-label="Main navigation">
+        <a class="navlink" href="#home">Home</a>
+        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#services">Services</a>
+        <a class="navlink" href="#clients">Clients</a>
+        <a class="navlink" href="#social">Social Media</a>
+        <a class="navlink" href="#tenders">Tenders</a>
+      </nav>
+
+      <div class="mobile-toggle">
+        <button onclick="toggleMobile()" aria-expanded="false" style="border:0;padding:8px 10px;background:transparent;border-radius:8px">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu container" role="menu">
+      <a class="navlink" href="#home" onclick="toggleMobile()">Home</a>
+      <a class="navlink" href="#about" onclick="toggleMobile()">About</a>
+      <a class="navlink" href="#services" onclick="toggleMobile()">Services</a>
+      <a class="navlink" href="#clients" onclick="toggleMobile()">Clients</a>
+      <a class="navlink" href="#social" onclick="toggleMobile()">Social Media</a>
+      <a class="navlink" href="#tenders" onclick="toggleMobile()">Tenders</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HOME -->
+    <section id="home" class="hero" aria-labelledby="homeHeading">
+      <div>
+        <h1 id="homeHeading">Hybrid research and strategic consulting for modern organisations</h1>
+        <p class="lead">Zetus Research & Consulting partners with governments, multilateral organisations and firms to deliver rigorous research, pragmatic strategy and data-enabled solutions that drive measurable impact.</p>
+
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn" href="#services">Our Services</a>
+          <a class="navlink" href="#tenders">Open Tenders</a>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="card">
+            <small class="muted">Founded</small>
+            <div style="font-weight:700;margin-top:6px">2017</div>
+          </div>
+          <div class="card">
+            <small class="muted">Countries</small>
+            <div style="font-weight:700;margin-top:6px">8+</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="height:220px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px dashed #eee;color:#999">
+          Visual / hero placeholder
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <div style="flex:1" class="card">
+            <small class="muted">Latest report</small>
+            <div style="font-weight:700;margin-top:6px">Market Pulse Q3</div>
+          </div>
+          <div style="flex:1" class="card">
+            <small class="muted">Open tenders</small>
+            <div style="font-weight:700;margin-top:6px">2 active</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="margin-top:40px" aria-labelledby="aboutHeading">
+      <h2 id="aboutHeading">About Zetus Research & Consulting</h2>
+      <p class="lead">We are a multidisciplinary team of researchers, data scientists and strategists delivering evidence-based insights, program design, and evaluation support.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px">
+        <div class="card"><div style="font-weight:700">Mission</div><div style="color:var(--muted);margin-top:6px">To power decisions with unbiased and timely evidence.</div></div>
+        <div class="card"><div style="font-weight:700">Vision</div><div style="color:var(--muted);margin-top:6px">A world where policy and business choices are guided by rigorous insights.</div></div>
+        <div class="card"><div style="font-weight:700">Values</div><div style="color:var(--muted);margin-top:6px">Integrity · Rigor · Impact · Collaboration</div></div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" style="margin-top:40px" aria-labelledby="servicesHeading">
+      <h2 id="servicesHeading">Services</h2>
+      <p class="lead">We offer research, evaluation and advisory services tailored to the needs of public and private partners.</p>
+
+      <div class="services-grid">
+        <div class="card"><div style="font-weight:700">Quantitative Research</div><div class="muted" style="margin-top:6px">Survey design, sampling, analysis & dashboards</div></div>
+        <div class="card"><div style="font-weight:700">Qualitative Studies</div><div class="muted" style="margin-top:6px">Interviews, FGDs, ethnography</div></div>
+        <div class="card"><div style="font-weight:700">Policy & Strategy</div><div class="muted" style="margin-top:6px">Policy briefs, strategy workshops</div></div>
+        <div class="card"><div style="font-weight:700">Impact Evaluation</div><div class="muted" style="margin-top:6px">Experimental & quasi-experimental evaluation</div></div>
+        <div class="card"><div style="font-weight:700">Data Infrastructure</div><div class="muted" style="margin-top:6px">Pipelines, monitoring & dashboards</div></div>
+        <div class="card"><div style="font-weight:700">Capacity Building</div><div class="muted" style="margin-top:6px">Training, mentoring & co-design</div></div>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section id="clients" style="margin-top:40px" aria-labelledby="clientsHeading">
+      <h2 id="clientsHeading">Clients</h2>
+      <p class="lead">We have partnered with governments, foundations and private sector clients.</p>
+
+      <div class="clients-grid" style="margin-top:12px">
+        <!-- placeholders for logos -->
+        <div class="card" style="display:flex;align-items:center;justify-content:center;color:#aaa">Client 1</div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;color:#aaa">Client 2</div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;color:#aaa">Client 3</div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;color:#aaa">Client 4</div>
+      </div>
+
+      <div style="margin-top:14px">
+        <h3 style="margin:0 0 6px 0">Selected case studies</h3>
+        <ul class="muted" style="margin-top:6px">
+          <li>National household survey to measure food security (2023)</li>
+          <li>Policy evaluation on access to finance for SMEs (2022)</li>
+          <li>Technology-enabled monitoring for an urban water project (2021)</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- SOCIAL -->
+    <section id="social" style="margin-top:40px" aria-labelledby="socialHeading">
+      <h2 id="socialHeading">Social Media</h2>
+      <p class="lead">Follow our insights and updates.</p>
+
+      <div class="social-grid" style="margin-top:12px">
+        <a class="card" href="#" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
+          <strong>Twitter</strong><span class="muted">@ZetusResearch</span>
+        </a>
+        <a class="card" href="#" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
+          <strong>LinkedIn</strong><span class="muted">Zetus Research & Consulting</span>
+        </a>
+        <a class="card" href="#" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
+          <strong>YouTube</strong><span class="muted">Zetus Research</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- TENDERS -->
+    <section id="tenders" style="margin-top:40px" aria-labelledby="tendersHeading">
+      <h2 id="tendersHeading">Tenders & Procurement</h2>
+      <p class="lead">Current procurement notices and RFPs.</p>
+
+      <div class="tenders-list">
+        <div class="tender-item">
+          <div>
+            <div style="font-weight:700">Household Survey Fieldwork (RFP)</div>
+            <div class="muted" style="margin-top:4px">Closing: 31 Oct 2025 • Reference: ZR-RFP-001</div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <a class="navlink" href="#" style="padding:8px 10px">Download</a>
+            <span class="chip">Open</span>
+          </div>
+        </div>
+
+        <div class="tender-item">
+          <div>
+            <div style="font-weight:700">Monitoring & Evaluation Services</div>
+            <div class="muted" style="margin-top:4px">Closing: 15 Nov 2025 • Reference: ZR-RFP-002</div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <a class="navlink" href="#" style="padding:8px 10px">Download</a>
+            <span class="chip">Open</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:12px">To receive tender notifications, email <strong>procurement@zetusresearch.com</strong></p>
+    </section>
+
+    <!-- CONTACT QUICK BLOCK -->
+    <div style="margin-top:40px" class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <div class="muted">Get in touch</div>
+          <div style="font-weight:700;margin-top:6px">hello@zetusresearch.com</div>
+          <div class="muted" style="margin-top:4px">+91 98765 43210</div>
+        </div>
+
+        <div style="display:flex;gap:10px">
+          <a class="navlink" href="#contact">Contact form</a>
+          <a class="btn" href="#tenders">Request a proposal</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <div>© <span id="year"></span> Zetus Research & Consulting</div>
+      <div class="muted">Registered office • City, Country</div>
+    </div>
+  </footer>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleMobile(){
+      var el = document.getElementById('mobileMenu');
+      el.classList.toggle('show');
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        var target = this.getAttribute('href');
+        if(target.length>1){
+          e.preventDefault();
+          var node = document.querySelector(target);
+          if(node) node.scrollIntoView({behavior:'smooth',block:'start'});
+          // close mobile menu on selection
+          var mm = document.getElementById('mobileMenu');
+          if(mm && mm.classList.contains('show')) mm.classList.remove('show');
+        }
+      })
+    })
+  </script>
+</body>
+</html>
